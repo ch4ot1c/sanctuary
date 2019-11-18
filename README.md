@@ -4,27 +4,31 @@ Browse your code in peace.
 
 Fly around in 3D and browse a directory tree.
 
-![](example-file-browser.gif)
+![Directories & Images Preview](example-file-browser.gif)
+
+[View Code & Text Preview](example-text.png)
 
 ## Running
 
-### From the repo root -
+```bash
+npm i -g serve
+npm i
+```
 
-Install package and http server: `npm i && npm i -g serve`
+First, generate the directory listing from the example: `./scripts/list-directory.js example/`
 
-Create directory listing file: `./scripts/list-directory.js example/`
+To run: `serve -s -l 5001`
+View in your web browser: `localhost:5001`
 
-Run: `serve -s -l 5001`; navigate to `localhost:5001` to view.
+To clone and add Github repos for viewing (in `scripts/output/cloned-repos/`), run: `./scripts/clone-and-list.js myorg/myrepo`.
 
-The default example runs using the files in `example/`. Run `./scripts/clone-and-list.js` to setup other repos for viewing in `scripts/output/cloned-repos/`.
-
-### Supports -
+## Supports
 
 - Images (`.jpg`, `.png`)
-- Text (`.txt`, `.md`)
 - Code (`.cpp`, `.c`, `.h`)
+- Text (`.md`, `.txt`)
 
-## Future Features
+### Future Features
 
 - [ ] More file & MIME types (`.svg`, `.mp4`)
 - [ ] `q`, `e` for flying `upward`, `downward`
